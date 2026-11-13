@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="أجندة تفاعلية مجانية صديقة لدماغ الـ ADHD: ٣ مهام في اليوم، عبادات يومية بسيطة، أسبوع وشهر وسنة، ورمضان ٢٠٢٧. إعداد: رحلة ونس - أ. سالمة سيد">
+<meta property="og:title" content="أجندة رحلة ونس">
+<meta property="og:description" content="أجندة تفاعلية مجانية صديقة لدماغ الـ ADHD — خطّط براحة… وارجع كل ما تقع">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#64663A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%2364663A'/%3E%3Cpath d='M20 40c-4-3-6-8-5-13 1-9 9-15 18-15 8 0 15 6 15 14 0 3 2 4 3 6l-3 1v6c0 2-2 3-4 3h-4v6H24v-6z' fill='%23FDFAF5'/%3E%3Ccircle cx='46' cy='14' r='5' fill='%23C97735'/%3E%3C/svg%3E">
+<title>أجندة رحلة ونس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+/* Layout: one calm column (max 720px), sticky header, bottom tab bar; olive = structure, terracotta = action, gold = Ramadan */
+:root{color-scheme:light;
+  --bg:#FBF8F1; --card:#FFFFFF; --ink:#2C2D1E; --muted:#6D6E5A; --line:#E2DECF;
+  --olive:#64663A; --oliveSoft:#ECEDDC; --terra:#C0702F; --terraSoft:#F6E5D5;
+  --gold:#A9822E; --goldSoft:#F5EBD3; --ok:#4E7A3A;
+  --f-head:"Cairo","Segoe UI",Tahoma,sans-serif; --f-body:"Tajawal","Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1A1B14; --card:#24251B; --ink:#ECEBDF; --muted:#A8A894; --line:#3A3B2C;
+  --olive:#B4B77A; --oliveSoft:#2F311F; --terra:#E39554; --terraSoft:#3A2A1C;
+  --gold:#D9B45E; --goldSoft:#3A321C; --ok:#8DBB72; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1A1B14; --card:#24251B; --ink:#ECEBDF; --muted:#A8A894; --line:#3A3B2C;
+  --olive:#B4B77A; --oliveSoft:#2F311F; --terra:#E39554; --terraSoft:#3A2A1C;
+  --gold:#D9B45E; --goldSoft:#3A321C; --ok:#8DBB72; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;direction:rtl;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,textarea:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--terra);outline-offset:2px}
+a{color:var(--terra)}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 calc(96px + env(safe-area-inset-bottom,0px))}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px 10px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--f-head);font-weight:900;font-size:22px;color:var(--olive);line-height:1.2;text-decoration:none}
+.brand span{color:var(--terra)}
+.status{font-size:12.5px;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:3px 10px;white-space:nowrap}
+.status.saving{color:var(--gold)} .status.err{color:#B3261E;border-color:#B3261E}
+main{display:flex;flex-direction:column;gap:14px;padding-top:14px}
+h1{font-family:var(--f-head);font-weight:900;font-size:26px;line-height:1.25;margin:0;color:var(--olive);text-wrap:balance}
+h2{font-family:var(--f-head);font-weight:800;font-size:17px;margin:0;color:var(--olive)}
+.sub{color:var(--muted);font-size:14.5px;margin:2px 0 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card.terra{border-color:var(--terra)} .card.gold{border-color:var(--gold);background:var(--goldSoft)}
+.lbl{font-family:var(--f-head);font-weight:800;font-size:14px;color:var(--terra);display:flex;align-items:center;gap:6px}
+.hint{font-size:13px;color:var(--muted)}
+.in{width:100%;font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1.5px dashed var(--line);padding:6px 2px;resize:none;overflow:hidden;min-height:38px;border-radius:0}
+.in:focus{outline:none;border-bottom-color:var(--terra);background:var(--terraSoft)}
+textarea.in.big{border:1.5px dashed var(--line);border-radius:10px;padding:10px;min-height:120px;background:repeating-linear-gradient(transparent 0 31px,var(--line) 31px 32px);background-attachment:local;line-height:32px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:520px){.grid2,.grid3{grid-template-columns:1fr}}
+/* day navigation */
+.dnav{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.dnav .mid{text-align:center;flex:1;min-width:0}
+.dnav .mid b{font-family:var(--f-head);font-weight:900;font-size:24px;color:var(--olive);display:block;line-height:1.2}
+.dnav .mid span{color:var(--muted);font-size:14px}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 12px;font-size:14px;font-family:var(--f-head);font-weight:700;color:var(--olive);text-decoration:none;white-space:nowrap}
+.pill.solid{background:var(--olive);color:var(--bg);border-color:var(--olive)}
+/* tasks */
+.task{display:flex;align-items:flex-start;gap:10px}
+.task .in{flex:1}
+.task.done .in{text-decoration:line-through;color:var(--muted)}
+.chk{flex:none;width:30px;height:30px;margin-top:4px;border-radius:9px;border:2px solid var(--olive);background:var(--card);display:grid;place-items:center;font-size:17px;color:transparent;padding:0}
+.chk.on{background:var(--olive);color:var(--bg)}
+/* worship + toggles */
+.wrow{display:flex;flex-wrap:wrap;gap:6px}
+.tg{border:1.5px solid var(--line);background:var(--card);border-radius:99px;padding:5px 12px;font-size:14px;font-family:var(--f-head);font-weight:700;color:var(--muted)}
+.tg.on{background:var(--olive);border-color:var(--olive);color:var(--bg)}
+.tg.g.on{background:var(--gold);border-color:var(--gold)}
+.mood{display:flex;gap:8px}
+.mood .tg{font-size:22px;padding:2px 12px}
+.mood .tg.on{background:var(--terraSoft);border-color:var(--terra)}
+/* banners */
+.ram{background:var(--goldSoft);border:1px solid var(--gold);color:var(--gold);border-radius:12px;padding:8px 12px;font-family:var(--f-head);font-weight:800;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.ram a{color:var(--gold)}
+.eid{background:var(--terraSoft);border-color:var(--terra);color:var(--terra)}
+/* week */
+.wk{display:flex;flex-direction:column;gap:10px}
+.day{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.day.is-ram{border-color:var(--gold)} .day.is-today{box-shadow:0 0 0 2px var(--terra)}
+.day .dh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;text-decoration:none;color:inherit}
+.day .dh b{font-family:var(--f-head);font-weight:800;color:var(--olive)}
+.day .dh span{font-size:13px;color:var(--muted)}
+.day .dh em{font-style:normal;font-size:12px;color:var(--gold);font-family:var(--f-head);font-weight:700}
+.day .task .chk{width:24px;height:24px;font-size:14px;margin-top:6px}
+.day .in{min-height:32px;padding:4px 2px}
+.mini .tg{padding:2px 9px;font-size:12.5px}
+/* calendar */
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-variant-numeric:tabular-nums}
+.cal .h{text-align:center;font-family:var(--f-head);font-weight:700;font-size:12px;color:var(--muted)}
+.cal a,.cal .e{aspect-ratio:1/1.05;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--ink);font-family:var(--f-head);font-weight:700;font-size:15px;background:var(--card);border:1px solid var(--line);min-width:0;max-width:100%;line-height:1.1}
+.cal .e{background:transparent;border:0}
+.cal a.fri{color:var(--terra)}
+.cal a.r{background:var(--goldSoft);border-color:var(--gold)}
+.cal a.ed{background:var(--terraSoft);border-color:var(--terra)}
+.cal a.td{box-shadow:0 0 0 2px var(--terra)}
+.cal a small{font-size:9.5px;color:var(--gold);font-weight:700}
+.cal a i{font-style:normal;font-size:10px;color:var(--ok);letter-spacing:1px}
+.year{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:560px){.year{grid-template-columns:repeat(2,1fr)}}
+.ym{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;min-width:0}
+.ym > a{display:block;text-align:center;font-family:var(--f-head);font-weight:800;color:var(--olive);text-decoration:none;margin-bottom:4px}
+.ym .cal{gap:1px}
+.ym .cal a,.ym .cal .e{font-size:10px;border:0;border-radius:4px;aspect-ratio:auto;height:18px;background:transparent}
+.ym .cal a.r{background:var(--goldSoft)} .ym .cal a.ed{background:var(--terraSoft)}
+.ym .cal .h{font-size:8.5px}
+/* habits */
+.hab{display:flex;flex-direction:column;gap:6px;padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.hab:last-child{border-bottom:0;padding-bottom:0}
+.hd{display:flex;flex-wrap:wrap;gap:4px}
+.hd .tg{width:32px;height:32px;padding:0;border-radius:50%;font-size:12px;font-variant-numeric:tabular-nums}
+/* details */
+details.card > summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+details.card > summary::-webkit-details-marker{display:none}
+details.card > summary::after{content:"＋";color:var(--terra);font-weight:900}
+details.card[open] > summary::after{content:"－"}
+/* ramadan */
+.juz{display:grid;grid-template-columns:repeat(10,1fr);gap:5px}
+@media (max-width:480px){.juz{grid-template-columns:repeat(6,1fr)}}
+.juz .tg{padding:6px 0;border-radius:8px;border-color:var(--gold);color:var(--gold);font-variant-numeric:tabular-nums}
+.juz .tg.on{background:var(--gold);color:var(--bg)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table.rt{border-collapse:collapse;width:100%;min-width:520px;font-size:13px}
+table.rt th{background:var(--gold);color:var(--bg);font-family:var(--f-head);font-weight:800;padding:6px 4px;position:sticky;top:0}
+table.rt td{border-top:1px solid var(--line);text-align:center;padding:3px}
+table.rt td:first-child a{font-family:var(--f-head);font-weight:800;color:var(--gold);text-decoration:none}
+table.rt .tg{width:30px;height:30px;padding:0;border-radius:8px;font-size:14px}
+/* tiles */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 14px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:4px}
+.tile b{font-family:var(--f-head);font-weight:800;font-size:16px;color:var(--olive)}
+.tile span{font-size:13px;color:var(--muted)}
+.tile.gold{border-color:var(--gold);background:var(--goldSoft)} .tile.gold b{color:var(--gold)}
+ul.dots{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+ul.dots li{padding-right:18px;position:relative}
+ul.dots li::before{content:"";position:absolute;right:2px;top:10px;width:8px;height:8px;border-radius:50%;background:var(--terra)}
+.quote{border-right:4px solid var(--terra);padding:6px 12px;background:var(--card);border-radius:8px}
+.big{font-family:var(--f-head);font-weight:900;color:var(--terra);font-size:19px;text-align:center;text-wrap:balance}
+.kv{display:grid;grid-template-columns:110px 1fr;gap:4px 10px;align-items:center}
+.kv label{font-family:var(--f-head);font-weight:700;font-size:14px;color:var(--olive)}
+.credit{text-align:center;font-size:12px;color:var(--muted);padding:18px 0 4px}
+.loading{padding:60px 0;text-align:center;color:var(--muted);font-family:var(--f-head)}
+/* cover */
+.cover{position:relative;overflow:hidden;min-height:calc(100dvh - 60px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;padding:44px 12px;border-radius:22px;background:var(--card);border:1px solid var(--line)}
+.cover .leaf{position:absolute;width:160px;height:160px;opacity:.16;pointer-events:none}
+.cover .leaf path{fill:var(--olive)} .cover .leaf .v{fill:none;stroke:var(--card);stroke-width:2.5}
+.cover .l1{top:-22px;left:-26px} .cover .l2{bottom:-22px;right:-26px;transform:rotate(180deg)}
+.cover .mark{width:96px;height:96px} .mark .c{fill:var(--olive)} .mark .h{fill:var(--card)} .mark .d{fill:var(--terra)}
+.cover .kick{font-family:var(--f-head);font-weight:700;color:var(--terra);font-size:15px}
+.cover .ct{font-size:46px;line-height:1.15;color:var(--olive);margin:0}
+.cover .ct span{color:var(--terra)}
+.cover .cs{font-family:var(--f-head);font-weight:600;font-size:17px;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:440px;margin-top:6px}
+.chips span{border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:4px 12px;font-size:14px}
+.start{background:var(--terra);color:var(--bg);text-decoration:none;font-family:var(--f-head);font-weight:800;font-size:18px;padding:12px 30px;border-radius:99px;margin-top:10px}
+.cby{font-size:13px;color:var(--muted);margin-top:14px}
+.ctag{font-family:var(--f-head);font-weight:800;color:var(--olive)}
+body.on-cover nav.tabs,body.on-cover header.top,body.on-cover .credit{display:none}
+body.on-cover main{padding-top:20px}
+/* bottom bar */
+nav.tabs{position:fixed;inset:auto 0 0;z-index:6;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+nav.tabs .in2{max-width:720px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+nav.tabs a{display:flex;flex-direction:column;align-items:center;gap:1px;padding:8px 2px 9px;text-decoration:none;color:var(--muted);font-family:var(--f-head);font-weight:700;font-size:12.5px}
+nav.tabs a .ic{font-size:19px;line-height:1.2}
+nav.tabs a.act{color:var(--terra)}
+@media (prefers-reduced-motion:no-preference){.tg,.chk{transition:background .15s,border-color .15s,color .15s}}
+</style>
+
+</head>
+<body>
+<div dir="rtl">
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#cover">أجندة <span>رحلة ونس</span></a>
+    <span class="status" id="status">بنجهّز…</span>
+  </header>
+  <main id="view"><div class="loading">بنجهّز أجندتك…</div></main>
+  <div class="credit">إعداد: رحلة ونس - أ. سالمة سيد · رحلة ونس — وعي ينمو وونس يدوم</div>
+</div>
+<nav class="tabs" aria-label="الأقسام"><div class="in2">
+  <a href="#today" data-t="today"><span class="ic">☀️</span>النهارده</a>
+  <a href="#week" data-t="week"><span class="ic">🗓️</span>الأسبوع</a>
+  <a href="#month" data-t="month"><span class="ic">📅</span>الشهر</a>
+  <a href="#year" data-t="year"><span class="ic">✨</span>السنة</a>
+  <a href="#more" data-t="more"><span class="ic">☰</span>المزيد</a>
+</div></nav>
+</div>
+
+<script>
+/* ---------- helpers ---------- */
+const AR="٠١٢٣٤٥٦٧٨٩", n=x=>String(x).replace(/\d/g,d=>AR[d]);
+const MONTHS=["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+const DAYS=["السبت","الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة"];
+const DS=["سبت","أحد","اثنين","ثلاثاء","أربعاء","خميس","جمعة"];
+const d0=(y,m,d)=>new Date(y,m,d,12);
+const pad=x=>String(x).padStart(2,"0");
+const iso=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const parse=s=>{const[a,b,c]=s.split("-").map(Number);return d0(a,b-1,c||1)};
+const add=(d,k)=>d0(d.getFullYear(),d.getMonth(),d.getDate()+k);
+const col=d=>(d.getDay()+1)%7;           // Saturday = 0
+const satOf=d=>add(d,-col(d));
+const today=()=>{const t=new Date();return d0(t.getFullYear(),t.getMonth(),t.getDate())};
+const RS=d0(2027,1,8), RE=d0(2027,2,9), EID=d0(2027,2,10);   // astronomical estimate
+const rday=d=>(d>=RS&&d<=RE)?Math.round((d-RS)/864e5)+1:0;
+const isEid=d=>iso(d)===iso(EID);
+const fmt=d=>`${n(d.getDate())} ${MONTHS[d.getMonth()]} ${n(d.getFullYear())}`;
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const gp=(o,p)=>p.split(".").reduce((a,k)=>a==null?undefined:a[k],o);
+function sp(o,p,v){const ks=p.split(".");let a=o;for(const k of ks.slice(0,-1)){if(typeof a[k]!=="object"||a[k]===null)a[k]={};a=a[k]}a[ks[ks.length-1]]=v}
+const idOf=(k,p)=>"f_"+(k+"_"+p).replace(/[^a-zA-Z0-9]/g,"_");
+
+/* ---------- storage: private db per person, browser fallback ---------- */
+const S={backend:"local",db:null,uid:null,cache:{},timers:{},chain:{}};
+const statusEl=document.getElementById("status");
+function setStatus(s){
+  const local=S.backend==="local";
+  statusEl.className="status "+(s==="saving"?"saving":s==="err"?"err":"");
+  statusEl.textContent=s==="saving"?"بيحفظ…":s==="err"?"ماتحفظش، جرّب تاني":local?"محفوظ على الجهاز ده":"✓ محفوظ";
+}
+async function initStore(){
+  try{
+    if(window.claude&&claude.use){
+      const to=new Promise(r=>setTimeout(()=>r(null),10000));
+      const [db,user]=await Promise.all([Promise.race([claude.use("db"),to]).catch(()=>null),Promise.race([claude.use("user"),to]).catch(()=>null)]);
+      if(db&&user){const id=await user.id().catch(()=>null);let w=null;try{w=await user.can("data.write")}catch(e){}
+        if(id&&w!==false){S.db=db;S.uid=id;S.backend="db"}}
+    }
+  }catch(e){}
+  setStatus("ok");
+}
+const ref=k=>S.db.collection("data/users/"+S.uid).doc(k);
+async function load(k){
+  if(k in S.cache)return S.cache[k];
+  let v={};
+  if(S.backend==="db"){try{const s=await ref(k).get();v=s.exists?JSON.parse(JSON.stringify(s.data())):{}}catch(e){v={}}}
+  else{try{v=JSON.parse(localStorage.getItem("ajenda:"+k)||"{}")}catch(e){v={}}}
+  if(!(k in S.cache))S.cache[k]=v;
+  return S.cache[k];
+}
+const loadAll=ks=>Promise.all(ks.map(load));
+function save(k){
+  clearTimeout(S.timers[k]);setStatus("saving");
+  S.timers[k]=setTimeout(()=>{
+    delete S.timers[k];
+    const snap=JSON.parse(JSON.stringify(S.cache[k]));
+    S.chain[k]=(S.chain[k]||Promise.resolve()).then(async()=>{
+      if(S.backend==="db"){await ref(k).set(snap)}
+      else{try{localStorage.setItem("ajenda:"+k,JSON.stringify(snap))}catch(e){}}
+    }).then(()=>{if(!Object.keys(S.timers).length)setStatus("ok")},err=>{
+      if(err&&err.code==="invalid_argument"&&S.backend==="db"){   // this viewer can't keep data online: keep it in this browser
+        S.backend="local";for(const kk in S.cache){try{localStorage.setItem("ajenda:"+kk,JSON.stringify(S.cache[kk]))}catch(e){}}setStatus("ok");
+      }else setStatus("err");
+    });
+  },700);
+}
+
+/* ---------- field builders ---------- */
+function ta(k,p,ph,cls=""){return `<textarea id="${idOf(k,p)}" class="in ${cls}" rows="1" data-k="${k}" data-p="${p}" placeholder="${esc(ph)}">${esc(gp(S.cache[k],p)??"")}</textarea>`}
+function tg(k,p,label,cls=""){const on=!!gp(S.cache[k],p);return `<button type="button" id="${idOf(k,p)}" class="tg ${cls} ${on?"on":""}" data-k="${k}" data-p="${p}" data-act="tg" aria-pressed="${on}">${label}</button>`}
+function task(k,p,ph){const on=!!gp(S.cache[k],p+".done");
+  return `<div class="task ${on?"done":""}"><button type="button" id="${idOf(k,p+".done")}" class="chk ${on?"on":""}" data-k="${k}" data-p="${p}.done" data-act="tg" aria-pressed="${on}" aria-label="خلصت">✓</button>${ta(k,p+".x",ph)}</div>`}
+function mood(k,p){const v=gp(S.cache[k],p);return `<div class="mood">${["😀","🙂","😐","😣"].map(e=>`<button type="button" class="tg ${v===e?"on":""}" data-k="${k}" data-p="${p}" data-act="pick" data-v="${e}" aria-pressed="${v===e}">${e}</button>`).join("")}</div>`}
+const PR=[["f","فجر"],["z","ظهر"],["a","عصر"],["m","مغرب"],["i","عشاء"]];
+function worship(k,P,d,mini){
+  const r=rday(d);
+  let h=PR.map(([c,l])=>tg(k,`${P}.w.${c}`,l)).join("")+tg(k,`${P}.w.am`,"☀️ أذكار")+tg(k,`${P}.w.pm`,"🌙 أذكار")+tg(k,`${P}.w.q`,"📖 قرآن");
+  if(r)h+=tg(k,`${P}.w.fast`,"صايم","g")+tg(k,`${P}.w.tr`,"🕌 تراويح","g")+(mini?"":tg(k,`${P}.w.sd`,"صدقة","g")+tg(k,`${P}.w.du`,"دعاء","g"));
+  return `<div class="wrow ${mini?"mini":""}">${h}</div>`;
+}
+
+/* ---------- views ---------- */
+const V={};
+const wkKey=d=>"w"+iso(satOf(d));
+function ramBanner(d){
+  const r=rday(d);
+  if(r)return `<div class="ram"><span>🌙 رمضان — اليوم ${n(r)}</span><a href="#ramadan">خطة رمضان</a></div>`;
+  if(isEid(d))return `<div class="ram eid"><span>🎉 عيد الفطر — كل سنة وإنت طيب</span></div>`;
+  return "";
+}
+
+V.today=async(arg)=>{
+  const d=arg?parse(arg):today(), k=wkKey(d), P=`days.${iso(d)}`;
+  await load(k);
+  const W=S.cache[k], isT=iso(d)===iso(today());
+  const focus=W.focus||W.frog?`<div class="card"><div class="lbl">🎯 تركيز الأسبوع</div><div>${esc(W.focus||"—")}</div>${W.frog?`<div class="hint">🐸 الضفدع: ${esc(W.frog)}</div>`:""}</div>`:"";
+  return `
+  <div class="dnav"><a class="pill" href="#today-${iso(add(d,-1))}">▸ امبارح</a>
+    <div class="mid"><b>${isT?"النهارده":DAYS[col(d)]}</b><span>${isT?DAYS[col(d)]+" · ":""}${fmt(d)}</span></div>
+    <a class="pill" href="#today-${iso(add(d,1))}">بكرة ◂</a></div>
+  ${isT?"":`<a class="pill solid" style="align-self:center" href="#today">ارجع للنهارده</a>`}
+  ${ramBanner(d)}
+  <section class="card terra"><div class="lbl">الـ ٣ بتوعي</div>
+    ${task(k,P+".t.0","أول حاجة (خليها سهلة)")}${task(k,P+".t.1","تاني حاجة")}${task(k,P+".t.2","تالت حاجة")}
+    <div class="hint">لو خلصوا يبقى يومك ناجح. أي حاجة زيادة = بونص 🎁</div></section>
+  <section class="card"><div class="lbl">🤲 عباداتي</div>${worship(k,P,d)}</section>
+  ${focus}
+  <div class="grid2">
+    <section class="card"><div class="lbl">🎁 بونص</div>${ta(k,P+".bonus","لو فضل وقت…")}</section>
+    <section class="card"><div class="lbl">💡 افتكر</div>${ta(k,P+".note","حاجة مش عايز أنساها")}</section>
+  </div>
+  <section class="card"><div class="lbl">النهارده كان</div>${mood(k,P+".mood")}</section>
+  <a class="pill" style="align-self:center" href="#bad">🌧️ يوم تقيل؟ افتح الخطة دي</a>`;
+};
+
+V.week=async(arg)=>{
+  const s=arg?satOf(parse(arg)):satOf(today()), k="w"+iso(s), e=add(s,6);
+  await load(k);
+  let days="";
+  for(let i=0;i<7;i++){
+    const d=add(s,i),P=`days.${iso(d)}`,r=rday(d);
+    days+=`<div class="day ${r?"is-ram":""} ${iso(d)===iso(today())?"is-today":""}">
+      <a class="dh" href="#today-${iso(d)}"><b>${DAYS[i]}</b><span>${n(d.getDate())} ${MONTHS[d.getMonth()]}</span>${r?`<em>🌙 رمضان ${n(r)}</em>`:isEid(d)?`<em>🎉 العيد</em>`:""}</a>
+      ${task(k,P+".t.0","")}${task(k,P+".t.1","")}${task(k,P+".t.2","")}
+      ${worship(k,P,d,true)}</div>`;
+  }
+  return `
+  <div class="dnav"><a class="pill" href="#week-${iso(add(s,-7))}">▸ اللي فات</a>
+    <div class="mid"><b>الأسبوع</b><span>${n(s.getDate())} ${MONTHS[s.getMonth()]} ← ${n(e.getDate())} ${MONTHS[e.getMonth()]} ${n(e.getFullYear())}</span></div>
+    <a class="pill" href="#week-${iso(add(s,7))}">الجاي ◂</a></div>
+  <div class="grid2">
+    <section class="card terra"><div class="lbl">🎯 تركيز الأسبوع</div>${ta(k,"focus","حاجة واحدة مهمة الأسبوع ده")}</section>
+    <section class="card terra"><div class="lbl">🐸 الضفدع</div>${ta(k,"frog","أصعب مهمة… تتعمل الأول")}</section>
+  </div>
+  <div class="wk">${days}</div>
+  <details class="card"><summary><h2>🔁 آخر الأسبوع (١٠ دقايق)</h2></summary>
+    <div class="lbl">✅ إيه اللي نفع؟</div>${ta(k,"rev.ok","")}
+    <div class="lbl">⚠️ إيه اللي وقّعني؟</div>${ta(k,"rev.fell","")}
+    <div class="lbl">🔧 هغيّر حاجة واحدة</div>${ta(k,"rev.change","")}
+    <div class="lbl">الطاقة الأسبوع ده</div>${mood(k,"rev.energy")}</details>`;
+};
+
+function calGrid(y,m,opts={}){
+  const first=d0(y,m,1),days=new Date(y,m+1,0).getDate();
+  let h=(opts.mini?["س","ح","ن","ث","ر","خ","ج"]:DS).map(x=>`<div class="h">${x}</div>`).join("");
+  for(let i=0;i<col(first);i++)h+=`<div class="e"></div>`;
+  for(let dd=1;dd<=days;dd++){
+    const d=d0(y,m,dd),r=rday(d),cls=[col(d)===6?"fri":"",r?"r":"",isEid(d)?"ed":"",iso(d)===iso(today())?"td":""].join(" ");
+    let extra="";
+    if(!opts.mini){
+      if(r)extra=`<small>🌙${n(r)}</small>`;else if(isEid(d))extra=`<small>🎉</small>`;
+      const W=S.cache[wkKey(d)];const t=W&&gp(W,`days.${iso(d)}.t`);
+      if(t){const c=Object.values(t).filter(x=>x&&x.done).length;if(c)extra+=`<i>${"•".repeat(c)}</i>`}
+    }
+    h+=`<a class="${cls}" href="#today-${iso(d)}" aria-label="${fmt(d)}">${n(dd)}${extra}</a>`;
+  }
+  return `<div class="cal">${h}</div>`;
+}
+
+V.month=async(arg)=>{
+  const base=arg?parse(arg):today(),y=base.getFullYear(),m=base.getMonth(),k=`m${y}-${pad(m+1)}`;
+  const wks=[];for(let s=satOf(d0(y,m,1));s<=d0(y,m+1,0);s=add(s,7))wks.push("w"+iso(s));
+  await loadAll([k,...wks]);
+  const prev=d0(y,m-1,1),next=d0(y,m+1,1),days=new Date(y,m+1,0).getDate();
+  const ramNote=(y===2027&&(m===1||m===2))?`<div class="ram"><span>🌙 رمضان من ٨ فبراير • 🎉 العيد ١٠ مارس (تقريبًا، حسب رؤية الهلال)</span><a href="#ramadan">خطة رمضان</a></div>`:"";
+  let habs="";
+  for(let h=0;h<3;h++){
+    let cells="";for(let dd=1;dd<=days;dd++)cells+=tg(k,`hab.${h}.d.${dd}`,n(dd));
+    habs+=`<div class="hab">${ta(k,`hab.${h}.name`,`العادة ${["الأولى","التانية","التالتة"][h]}`)}<div class="hd">${cells}</div></div>`;
+  }
+  return `
+  <div class="dnav"><a class="pill" href="#month-${iso(prev).slice(0,7)}">▸ ${MONTHS[prev.getMonth()]}</a>
+    <div class="mid"><b>${MONTHS[m]}</b><span>${n(y)}</span></div>
+    <a class="pill" href="#month-${iso(next).slice(0,7)}">${MONTHS[next.getMonth()]} ◂</a></div>
+  ${ramNote}
+  <section class="card">${calGrid(y,m)}<div class="hint">دوس على أي يوم تفتحه. النقط الخضرا = مهام خلصت.</div></section>
+  <section class="card terra"><div class="lbl">⭐ أهم ٣ في الشهر ده</div>
+    ${ta(k,"top.0","١.")}${ta(k,"top.1","٢.")}${ta(k,"top.2","٣.")}</section>
+  <section class="card"><div class="lbl">📌 مواعيد ومناسبات</div>${ta(k,"appts","اكتب الميعاد والتاريخ","big")}</section>
+  <details class="card" open><summary><h2>🧠 خطة الشهر</h2></summary>
+    <div class="lbl">فضّي دماغك</div><div class="hint">كل اللي شاغلك الشهر ده، من غير ترتيب.</div>${ta(k,"dump","","big")}
+    <div class="grid2"><div><div class="lbl">🤝 هطلب مساعدة في</div>${ta(k,"help","")}</div>
+    <div><div class="lbl">🤲 نيّتي ووِردي الشهر ده</div>${ta(k,"niyya","")}</div></div></details>
+  <details class="card" open><summary><h2>🔗 متتبّع العادات (٣ بس)</h2></summary>${habs}</details>
+  <details class="card"><summary><h2>🔁 آخر الشهر</h2></summary>
+    <div class="lbl">🎉 حاجات عملتها وأنا فخور بيها (حتى الصغيرة)</div>${ta(k,"rev.proud","")}
+    <div class="lbl">⚠️ إيه اللي وقّعني؟</div>${ta(k,"rev.fell","")}
+    <div class="lbl">🔧 هغيّر حاجة واحدة الشهر الجاي</div>${ta(k,"rev.change","")}
+    <div class="lbl">🤲 عباداتي: حاجة فرّحتني / حاجة عايز أرجعلها</div>${ta(k,"rev.ibada","")}
+    <div class="lbl">🎁 هكافئ نفسي بـ</div>${ta(k,"rev.reward","")}
+    <div class="lbl">الشهر ده كان</div>${mood(k,"rev.mood")}
+    <div class="hint">وأنا لسه هنا وبكمّل 💪</div></details>`;
+};
+
+V.year=async(arg)=>{
+  const y=arg?Number(arg):2027,k="y"+y;
+  await load(k);
+  let ms="";for(let m=0;m<12;m++)ms+=`<div class="ym"><a href="#month-${y}-${pad(m+1)}">${MONTHS[m]}</a>${calGrid(y,m,{mini:true})}</div>`;
+  let goals="";for(let g=0;g<3;g++)goals+=`<section class="card"><div class="lbl">✨ الحلم ${n(g+1)}</div>${ta(k,`g.${g}.dream`,"الحلم")}${ta(k,`g.${g}.why`,"ليه مهم لي؟")}${ta(k,`g.${g}.step`,"أصغر أول خطوة")}</section>`;
+  return `
+  <div class="dnav"><a class="pill" href="#year-${y-1}">▸ ${n(y-1)}</a><div class="mid"><b>سنة ${n(y)}</b><span>دوس على أي شهر أو يوم</span></div><a class="pill" href="#year-${y+1}">${n(y+1)} ◂</a></div>
+  <div class="year">${ms}</div>
+  ${y===2027?`<div class="ram"><span>🌙 رمضان ٨ فبراير ← ٩ مارس • 🎉 العيد ١٠ مارس (تقريبًا)</span><a href="#ramadan">خطة رمضان</a></div>`:""}
+  <h1 style="margin-top:8px">٣ أحلام للسنة بس</h1><p class="sub">مش ١٠… تلاتة. دماغك يقدر يمسك تلاتة.</p>
+  <div class="grid3">${goals}</div>
+  <section class="card terra"><div class="lbl">كلمة السنة</div><div class="hint">كلمة واحدة ترجعلها لما تتوه: هدوء، توازن، بداية…</div>${ta(k,"word","كلمتي")}</section>`;
+};
+
+V.ramadan=async()=>{
+  const k="r2027",wks=[];for(let s=satOf(RS);s<=RE;s=add(s,7))wks.push("w"+iso(s));
+  await loadAll([k,...wks]);
+  let juz="";for(let j=1;j<=30;j++)juz+=tg(k,`juz.${j}`,n(j));
+  let rows="";
+  for(let i=1;i<=30;i++){
+    const d=add(RS,i-1),wk=wkKey(d),P=`days.${iso(d)}.w`,W=gp(S.cache[wk],P)||{};
+    const pc=PR.filter(([c])=>W[c]).length;
+    rows+=`<tr><td><a href="#today-${iso(d)}">${n(i)}</a><div class="hint">${n(d.getDate())} ${MONTHS[d.getMonth()].slice(0,3)}</div></td>
+      <td>${tg(wk,P+".fast","✓","g")}</td><td><a class="pill" href="#today-${iso(d)}">${n(pc)}/٥</a></td>
+      <td>${tg(wk,P+".tr","✓","g")}</td><td>${tg(wk,P+".q","✓","g")}</td><td>${tg(wk,P+".am","✓","g")}</td>
+      <td>${tg(wk,P+".sd","✓","g")}</td><td>${tg(wk,P+".du","✓","g")}</td></tr>`;
+  }
+  return `
+  <div class="card gold"><h1 style="color:var(--gold)">🌙 رمضان بدماغ مرتاح</h1>
+    <div>رمضان مش مسابقة. الهدف إنك تقرّب… مش إنك تتعب وتقف في أسبوع.</div>
+    <div class="hint">٨ فبراير ← ٩ مارس ٢٠٢٧، والعيد ١٠ مارس (حسابات فلكية تقريبية، ممكن تفرق يوم حسب رؤية الهلال).</div></div>
+  <section class="card"><div class="lbl">🤲 نيّتي في رمضان ده</div>${ta(k,"niyya","")}</section>
+  <div class="grid2">
+    <section class="card"><div class="lbl">🌟 يوم عادي</div><div class="hint">اللي هعمله لو طاقتي كويسة</div>${ta(k,"normal","")}</section>
+    <section class="card"><div class="lbl">🌧️ يوم تعبان</div><div class="hint">الحد الأدنى اللي يكفي</div>${ta(k,"tired","")}</section></div>
+  <section class="card"><div class="lbl">🍽️ قلّل قرارات المطبخ</div>
+    ${ta(k,"suhoor","٣ سحور ثابتين")}${ta(k,"iftar","٥ فطار بيتكرروا")}
+    <div class="hint">جهّز قبل رمضان: تفريز، قايمة طلبات، ومين هيساعد في المطبخ.</div></section>
+  <section class="card"><div class="lbl">📖 ختمتي، علّم الجزء لما تخلّصه</div><div class="juz">${juz}</div>
+    <div class="hint">صفحة يوميًا أحسن من خطة كبيرة تقف.</div></section>
+  <section class="card"><div class="lbl">متتبّع رمضان</div><div class="hint">نفس اللي بتعلّمه في صفحة «النهارده»، متجمّع هنا. الفاضي عادي، بكرة فرصة جديدة.</div>
+    <div class="tbl"><table class="rt"><tr><th>اليوم</th><th>صيام</th><th>الصلوات</th><th>تراويح</th><th>قرآن</th><th>أذكار</th><th>صدقة</th><th>دعاء</th></tr>${rows}</table></div></section>`;
+};
+
+V.cover=async()=>`<section class="cover">
+  <svg class="leaf l1" viewBox="0 0 100 100" aria-hidden="true"><path d="M10 90 C20 40 60 10 92 8 C88 45 60 85 10 90Z"/><path class="v" d="M12 88 C35 60 60 35 88 12"/></svg>
+  <svg class="leaf l2" viewBox="0 0 100 100" aria-hidden="true"><path d="M10 90 C20 40 60 10 92 8 C88 45 60 85 10 90Z"/><path class="v" d="M12 88 C35 60 60 35 88 12"/></svg>
+  <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><circle class="c" cx="32" cy="32" r="31"/><path class="h" d="M20 40c-4-3-6-8-5-13 1-9 9-15 18-15 8 0 15 6 15 14 0 3 2 4 3 6l-3 1v6c0 2-2 3-4 3h-4v6H24v-6z"/><circle class="d" cx="46" cy="14" r="5"/><circle class="d" cx="54" cy="24" r="3.5"/><circle class="d" cx="52" cy="6" r="2.5"/></svg>
+  <div class="kick">أجندة صديقة لدماغ الـ ADHD</div>
+  <h1 class="ct">أجندة<br><span>رحلة ونس</span></h1>
+  <p class="cs">خطّط براحة… وارجع كل ما تقع</p>
+  <div class="chips"><span>☀️ ٣ مهام بس في اليوم</span><span>🤲 عبادات يومية بسيطة</span><span>🌙 رمضان ٢٠٢٧</span><span>💾 بتتحفظ لوحدها</span></div>
+  <a class="start" href="#today">افتح أجندتي ◂</a>
+  <a class="pill" href="#guide">إزاي أستخدمها؟</a>
+  <div class="cby">إعداد: رحلة ونس - أ. سالمة سيد</div>
+  <div class="ctag">وعي ينمو وونس يدوم</div>
+</section>`;
+
+V.more=async()=>`
+  <h1>المزيد</h1>
+  <div class="tiles">
+    <a class="tile gold" href="#ramadan"><b>🌙 رمضان</b><span>الخطة والختمة والمتتبّع</span></a>
+    <a class="tile" href="#ideas"><b>💡 مخزن الأفكار</b><span>فكرة جت فجأة؟ حطها هنا</span></a>
+    <a class="tile" href="#bad"><b>🌧️ اليوم التقيل</b><span>لما كل حاجة تبوظ</span></a>
+    <a class="tile" href="#worship"><b>🤲 عباداتي البسيطة</b><span>وِردي وحيل الاستمرار</span></a>
+    <a class="tile" href="#contacts"><b>📇 أرقام مهمة</b><span>ومواعيد سنوية</span></a>
+    <a class="tile" href="#guide"><b>🧭 إزاي أستخدمها</b><span>٥ قواعد بس</span></a>
+  </div>`;
+
+V.ideas=async()=>{await load("ideas");return `<h1>💡 مخزن الأفكار</h1><p class="sub">فكرة جت وإنت في نص حاجة؟ اكتبها هنا وارجع لشغلك. مش هتضيع.</p>
+  <section class="card">${ta("ideas","text","اكتب…","big")}</section>`};
+
+V.bad=async()=>{await load("bad");return `
+  <h1>🌧️ خطة اليوم التقيل</h1><p class="sub">لما كل حاجة تبوظ… الصفحة دي بس.</p>
+  <section class="card terra"><div class="lbl">النهارده هعمل بس</div>${ta("bad","must.0","١. مثلًا: يحيى أكل ونضيف وفي أمان")}${ta("bad","must.1","٢. أكلت")}${ta("bad","must.2","٣. نمت")}</section>
+  <section class="card"><div class="lbl">مسموح النهارده</div><ul class="dots"><li>أكل جاهز</li><li>البيت مش مترتب</li><li>أأجّل الرسايل</li><li>أنام بدري</li></ul></section>
+  <section class="card"><div class="lbl">🛑 وقفة ٩٠ ثانية</div><ul class="dots"><li>وقّف وقول: «أنا متضغط، مش فاشل»</li><li>شهيق ٤ عدّات… زفير ٦ عدّات، ٥ مرات</li><li>اشرب مايه أو اغسل وشك</li><li>اختار حاجة واحدة بس دلوقتي</li></ul></section>
+  <section class="card"><div class="lbl">حاجات بتهديني</div>${ta("bad","calm","")}</section>
+  <section class="card"><div class="lbl">📞 أكلّم مين؟</div>${ta("bad","who","")}</section>
+  <div class="big">بكرة يوم جديد… وأنا برجع، مش ببدأ من الصفر.</div>`};
+
+V.worship=async()=>{await load("set");return `
+  <h1>🤲 عباداتي البسيطة</h1><p class="sub">مش مطلوب كمال… مطلوب استمرار.</p>
+  <div class="quote">قال النبي ﷺ: «أحبُّ الأعمالِ إلى اللهِ أدومُها وإن قَلَّ» <span class="hint">(متفق عليه)</span></div>
+  <section class="card terra"><div class="lbl">🌱 ابدأ صغير جدًا</div>
+    ${ta("set","wird","وِردي اليومي: صفحة؟ ٥ آيات؟ ١٠ دقايق استماع؟")}
+    ${ta("set","after","هقرا الأذكار بعد… (الفجر، القهوة، تنويم الطفل)")}</section>
+  <section class="card"><div class="lbl">حيل تناسب دماغك</div><ul class="dots"><li>منبّه باسم الصلاة</li><li>الأذكار صوت بدل قراءة</li><li>المصحف في مكان ظاهر</li><li>فاتك يوم؟ ارجع النهارده عادي</li></ul></section>
+  <div class="big" style="color:var(--olive)">سبحان الله • الحمد لله • لا إله إلا الله • الله أكبر</div>
+  <p class="hint" style="text-align:center;margin:0">ذكر خفيف تقوله وإنت بتطبخ أو ماشي</p>`};
+
+V.contacts=async()=>{await load("contacts");
+  const rows=[["doc","الدكتور"],["ph","الصيدلية"],["sch","الحضانة"],["work","الشغل"],["em","الطوارئ"]].map(([c,l])=>`<label for="${idOf("contacts","c."+c)}">${l}</label>${ta("contacts","c."+c,"")}`).join("");
+  return `<h1>📇 أرقام وحاجات مهمة</h1>
+  <section class="card"><div class="kv">${rows}</div>${ta("contacts","other","أرقام تانية")}</section>
+  <section class="card"><div class="lbl">مواعيد سنوية</div><div class="hint">تجديدات، اشتراكات، أعياد ميلاد</div>${ta("contacts","annual","","big")}</section>`};
+
+V.guide=async()=>`
+  <h1>🧭 إزاي تستخدم الأجندة؟</h1>
+  <section class="card"><ul class="dots">
+    <li><b>صفحة فاضية = عادي جدًا.</b> فوّت أسبوع؟ افتح النهارده وكمّل. ممنوع الإحساس بالذنب.</li>
+    <li><b>٣ حاجات بس في اليوم.</b> أي حاجة زيادة = بونص.</li>
+    <li><b>«فضّي دماغك» أول كل شهر</b> قبل ما تخطّط.</li>
+    <li><b>افتحها الصبح على «النهارده»</b> وبالليل علّم اللي خلص.</li>
+    <li><b>كل حاجة بتتحفظ لوحدها</b> وإنت بتكتب، ومش محتاج تدوس حفظ.</li></ul></section>
+  <section class="card"><div class="lbl">جوّه الأجندة</div><ul class="dots">
+    <li>النهارده: الـ ٣ بتوعك + العبادات + بونص</li><li>الأسبوع: التركيز والضفدع + كل يوم + مراجعة</li>
+    <li>الشهر: التقويم + أهم ٣ + فضّي دماغك + العادات + مراجعة</li><li>السنة: ٣ أحلام + كلمة السنة</li></ul></section>`;
+
+/* ---------- router ---------- */
+const view=document.getElementById("view");
+function autogrow(el){el.style.height="auto";el.style.height=el.scrollHeight+"px"}
+async function route(){
+  let seen=false;try{seen=localStorage.getItem("ajenda:seen")==="1"}catch(e){}
+  const h=(location.hash||(seen?"#today":"#cover")).slice(1);
+  const m=h.match(/^(cover|today|week|month|year|ramadan|more|ideas|bad|worship|contacts|guide)(?:-(.+))?$/);
+  const name=m?m[1]:"today",arg=m?m[2]:undefined;
+  const tab={ramadan:"more",ideas:"more",bad:"more",worship:"more",contacts:"more",guide:"more"}[name]||name;
+  document.querySelectorAll("nav.tabs a").forEach(a=>a.classList.toggle("act",a.dataset.t===tab));
+  document.body.classList.toggle("on-cover",name==="cover");
+  if(name!=="cover"){try{localStorage.setItem("ajenda:seen","1")}catch(e){}}
+  try{view.innerHTML=await V[name](arg)}catch(e){view.innerHTML=`<div class="loading">الصفحة دي ما فتحتش. ارجع لـ <a href="#today">النهارده</a>.</div>`}
+  view.querySelectorAll("textarea.in").forEach(autogrow);
+  window.scrollTo(0,0);
+}
+
+/* ---------- events ---------- */
+document.addEventListener("input",e=>{
+  const t=e.target;if(!t.dataset||!t.dataset.k)return;
+  sp(S.cache[t.dataset.k],t.dataset.p,t.value);save(t.dataset.k);
+  if(t.tagName==="TEXTAREA")autogrow(t);
+});
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-act]");if(!b)return;
+  const k=b.dataset.k,p=b.dataset.p,doc=S.cache[k];
+  if(b.dataset.act==="tg"){
+    const on=!gp(doc,p);sp(doc,p,on);b.classList.toggle("on",on);b.setAttribute("aria-pressed",on);
+    if(b.classList.contains("chk"))b.closest(".task")?.classList.toggle("done",on);
+  }else{
+    const v=gp(doc,p)===b.dataset.v?"":b.dataset.v;sp(doc,p,v);
+    b.parentElement.querySelectorAll("[data-act=pick]").forEach(x=>{const on=x.dataset.v===v;x.classList.toggle("on",on);x.setAttribute("aria-pressed",on)});
+  }
+  save(k);
+});
+window.addEventListener("hashchange",route);
+window.addEventListener("resize",()=>view.querySelectorAll("textarea.in").forEach(autogrow));
+initStore().then(route);
+</script>
+
+</body>
+</html>
